@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a51c6f96-dd23-4445-a9c5-89c76bbeae5b" name="Changes" comment="ДЗ по написанию своего подобия ArrayList">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IntegerList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StringListReady.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StringListReady.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="a51c6f96-dd23-4445-a9c5-89c76bbeae5b" name="Changes" comment="ДЗ по написанию своего подобия ArrayList для Integer" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +137,7 @@
       <workItem from="1663794292818" duration="1591000" />
       <workItem from="1663826223162" duration="1529000" />
       <workItem from="1663911310911" duration="2396000" />
-      <workItem from="1663934124617" duration="1996000" />
+      <workItem from="1663934124617" duration="2188000" />
     </task>
     <task id="LOCAL-00001" summary="ДЗ по написанию своего подобия ArrayList">
       <created>1663615600041</created>
@@ -152,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663615600041</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ДЗ по написанию своего подобия ArrayList для Integer">
+      <created>1663950677424</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663950677424</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +172,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ДЗ по написанию своего подобия ArrayList" />
-    <option name="LAST_COMMIT_MESSAGE" value="ДЗ по написанию своего подобия ArrayList" />
+    <MESSAGE value="ДЗ по написанию своего подобия ArrayList для Integer" />
+    <option name="LAST_COMMIT_MESSAGE" value="ДЗ по написанию своего подобия ArrayList для Integer" />
   </component>
 </project>
