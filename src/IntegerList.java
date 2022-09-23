@@ -1,6 +1,5 @@
 import exceptions.IndexNotFoundException;
 import exceptions.ItemIsNullException;
-import exceptions.TestListOfBoundException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,12 +7,15 @@ import java.util.List;
 import java.util.Random;
 
 public class IntegerList {
-    private final Integer[] list;
+    private Integer[] list;
     private static int size;
 
     public IntegerList() {
-        this.list = generateRandomArray(100000);
+        this.list = new Integer[]{};
     }
+//    public IntegerList() {
+//        this.list = generateRandomArray(100000);
+//    }
 
     public IntegerList(int s) {
         list = new Integer[s];
@@ -41,46 +43,62 @@ public class IntegerList {
         }
     }
 
-    private void validSize() {
-        if (size == list.length) {
-            throw new TestListOfBoundException("Список заполнен, мой господин!");
-        }
-    }
+//    private void validSize() {
+//        if (size == list.length) {
+//          throw new TestListOfBoundException("Список заполнен, мой господин!");
+//        }
+//    }
     // 1 2 3 4 5 6 7 8 9
-    public Integer binarySearch(int number){//2
-        int count = list.length/2;//5
-        int[] array = new int[list.length];
-        while (number!=count) {
-            if (number > array.length / 2) {
-                System.arraycopy(list, list.length / 2, array, 0, list.length / 2);
-            }
-            if (number < array.length / 2) {
-                System.arraycopy(list, 0, array, 0, list.length / 2);
-            }
-        }
-        return count;
+    public void grow(){
+        int length = list.length*2- list.length/2;
+        Integer[] array = new Integer[length];
+        System.arraycopy(list,0,array,0,array.length);
+        list = array;
     }
-    public void sort(Integer[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            int temp = arr[i];
-            int j = i;
-            while (j > 0 && arr[j - 1] >= temp) {
-                arr[j] = arr[j - 1];
-                j--;
-            }
-            arr[j] = temp;
+    public void quickSort(Integer[] arr, int begin, int end) {
+        if (begin < end) {
+            int partitionIndex = partition(arr, begin, end);
+
+            quickSort(arr, begin, partitionIndex - 1);
+            quickSort(arr, partitionIndex + 1, end);
         }
     }
 
+    private int partition(Integer[] arr, int begin, int end) {
+        int pivot = arr[end];
+        int i = (begin - 1);
+
+        for (int j = begin; j < end; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+
+                swapElements(arr, i, j);
+            }
+        }
+
+        swapElements(arr, i + 1, end);
+        return i + 1;
+    }
+    private void swapElements(Integer[] arr, int left, int right) {
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+    }
 
     public Integer add(Integer item) {
-        validSize();
+        //validSize();
+        if (size == list.length){
+            grow();
+        }
         validString(item);
         return list[size++] = item;
     }
 
     public Integer add(int index, Integer item) {
-        validSize();
+       //validSize();
+        if (size == list.length){
+            grow();
+        }
         validString(item);
         validIndex(index);
         if (index == size) {
@@ -127,7 +145,7 @@ public class IntegerList {
         validIndex(item);
 
         Integer [] array = toArray();
-        sort(list);
+        quickSort(list,list[0], list.length);
         int min = 0;
         int max = list.length - 1;
         while (min <= max){
